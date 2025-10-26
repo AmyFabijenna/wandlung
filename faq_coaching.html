@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Häufig gestellte Fragen | Amy Lang - Heilung & Wandlung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a52 50%, #0d2137 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #e8f4f8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(10, 22, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(232, 244, 248, 0.1);
+        }
+
+        h1 {
+            color: #ff1493;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #a8d8ea;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: rgba(255, 20, 147, 0.2);
+            color: #ff1493;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .back-link:hover {
+            background: rgba(255, 20, 147, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background: rgba(26, 58, 82, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(232, 244, 248, 0.1);
+        }
+
+        .faq-section h2 {
+            color: #ff1493;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .faq-item {
+            background: rgba(10, 22, 40, 0.6);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 20, 147, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+            border-color: #ff1493;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 58, 82, 0.3);
+            color: #e8f4f8;
+        }
+
+        .faq-question:hover {
+            background: rgba(26, 58, 82, 0.5);
+        }
+
+        .faq-icon {
+            color: #ff1493;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: rgba(26, 58, 82, 0.6);
+            color: #d0e8f2;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(199, 21, 133, 0.3));
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ff1493;
+            margin: 15px 0;
+        }
+
+        .contact-promo {
+            text-align: center;
+            background: rgba(10, 22, 40, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+        }
+
+        .contact-promo h3 {
+            color: #ff1493;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 300;
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff1493 0%, #c71585 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .whatsapp-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #a8d8ea;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Häufig gestellte Fragen</h1>
+            <p class="subtitle">Alles, was Sie über mein Coaching wissen müssen</p>
+            <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
+        </header>
+
+        <section class="faq-section">
+            <h2>Allgemeines zum Coaching</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Was ist Life-Coaching und wie unterscheidet es sich von Therapie?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Life-Coaching fokussiert sich auf Gegenwart und Zukunft. Es geht um konkrete Ziele, Veränderungen und Entwicklung. Therapie hingegen arbeitet oft mit der Vergangenheit und behandelt psychische Erkrankungen.</p>
+                    <div class="highlight">
+                        <p><strong>Wichtig:</strong> Coaching ersetzt keine Therapie. Bei psychischen Erkrankungen wenden Sie sich bitte an einen Therapeuten.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Für wen ist Ihr Coaching geeignet?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Mein Coaching ist für Menschen, die an einem Wendepunkt stehen und bereit sind, aktiv an sich zu arbeiten. Besonders geeignet für:</p>
+                    <p>• Berufliche Neuorientierung<br>
+                    • Klarheit in Lebensentscheidungen<br>
+                    • Aufbau von Stabilität<br>
+                    • Potenzialentfaltung<br>
+                    • Konkrete Ziele erreichen</p>
+                    <p><strong>Nicht geeignet für:</strong> Menschen, die nur jammern wollen ohne zu handeln, oder die eine Therapie benötigen.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Welche Qualifikationen haben Sie?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ich verfüge über 20 Jahre Erfahrung in der Begleitung von Menschen in Entwicklungsprozessen - zunächst als Sprachtrainerin, wo ich bereits Life-Coaching-Elemente integriert habe.</p>
+                    <p>Meine Stärke liegt darin, Menschen dabei zu helfen, Klarheit zu finden und konkrete Schritte zu gehen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Ablauf und Methoden</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Wie läuft eine Coaching-Sitzung ab?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Eine Sitzung dauert 60 Minuten und findet per Video statt. Wir arbeiten fokussiert an Ihrem Thema - mit klaren Fragen, Reflexion und konkreten Handlungsschritten.</p>
+                    <p>Zwischen den Sitzungen setzen Sie um, was wir erarbeitet haben. In der nächsten Sitzung reflektieren wir und gehen weiter.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Findet das Coaching nur online statt?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ja, ausschließlich per Video (über sichere Plattformen). Das ermöglicht flexible Terminplanung und Sie können bequem von zu Hause teilnehmen.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Wie viele Sitzungen brauche ich?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Das hängt von Ihrem Thema ab. Manche Klienten buchen einzelne Sitzungen für konkrete Fragen. Für tiefere Veränderungen empfehle ich das Transformations-Paket mit 6 Sitzungen über 3 Monate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Was ist Ihre Coaching-Methode?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ich arbeite pragmatisch und strukturiert. Mein Ansatz kombiniert:</p>
+                    <p>• Klare Fragestellungen zur Selbstreflexion<br>
+                    • Konkrete Handlungsschritte (keine reinen Gespräche)<br>
+                    • Ehrliches Feedback (auch wenn es unbequem ist)<br>
+                    • Fokus auf Umsetzung zwischen den Sitzungen</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Preise und Buchung</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Was kostet eine Coaching-Sitzung?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Einzelsitzung:</strong> 80€ für 60 Minuten</p>
+                    <p><strong>Transformations-Paket:</strong> 450€ für 6 Sitzungen (= 75€ pro Sitzung)</p>
+                    <div class="highlight">
+                        <p><strong>Kostenloses Erstgespräch:</strong> 20 Minuten per Video, um zu klären, ob wir zusammenpassen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Wie funktioniert die Bezahlung?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Die Zahlung erfolgt im Voraus vor der Sitzung bzw. vor Beginn des Pakets. Nach Zahlungseingang wird der Termin verbindlich gebucht.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Kann ich einen Termin absagen oder verschieben?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ja, Termine können bis 48 Stunden vorher kostenfrei abgesagt oder verschoben werden. Bei kurzfristigerer Absage verfällt die Sitzung ersatzlos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Wie buche ich eine Sitzung?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="highlight">
+                        <p><strong>Schritt 1:</strong> Schreiben Sie mir eine Nachricht: "Ich bin bereit"</p>
+                        <p><strong>Schritt 2:</strong> Ich schicke Ihnen 3 Fragen zur Vorbereitung</p>
+                        <p><strong>Schritt 3:</strong> Kostenloses Erstgespräch (20 Min)</p>
+                        <p><strong>Schritt 4:</strong> Wenn es passt, buchen wir die erste Sitzung</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Nimmt jeder als Klient an?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nein. Ich arbeite nur mit Menschen, die wirklich bereit sind zu handeln. Nach dem Erstgespräch entscheide ich, ob wir zusammenpassen.</p>
+                    <p>Das ist keine Ablehnung Ihrer Person - sondern eine Frage der Passung und Ihrer Bereitschaft.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Vertraulichkeit und Datenschutz</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Sind die Coaching-Gespräche vertraulich?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ja, absolut. Alle Inhalte unserer Gespräche werden streng vertraulich behandelt.</p>
+                    <p><strong>Ausnahme:</strong> Bei akuter Selbst- oder Fremdgefährdung bin ich verpflichtet, entsprechende Stellen zu informieren.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Werden die Sitzungen aufgezeichnet?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nein. Die Sitzungen werden nicht aufgezeichnet.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Ergebnisse und Erwartungen</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Kann ich Garantie für Ergebnisse erwarten?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nein. Der Erfolg des Coachings hängt maßgeblich von Ihrer aktiven Mitarbeit und Umsetzung ab. Ich biete Ihnen Struktur, Klarheit und Begleitung - aber die Arbeit müssen Sie selbst leisten.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Was passiert, wenn das Coaching nicht hilft?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Wenn Sie nach 2-3 Sitzungen keine Fortschritte sehen, sollten wir das offen besprechen. Manchmal passt es einfach nicht - oder Sie brauchen eine andere Art der Unterstützung (z.B. Therapie).</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-promo">
+            <h3>Haben Sie weitere Fragen?</h3>
+            <p>Ich beantworte gerne alle Ihre Fragen persönlich. Kontaktieren Sie mich einfach!</p>
+            <a href="mailto:kontakt@amylang-coaching.com" class="whatsapp-link">
+                ✉️ Schreiben Sie mir
+            </a>
+        </div>
+
+        <footer>
+            <p>Amy Lang - Heilung & Wandlung | © 2025 Alle Rechte vorbehalten</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('active');
+                icon.textContent = '−';
+            }
+        }
+
+        // Open first FAQ item by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstFaq = document.querySelector('.faq-item');
+            if (firstFaq) {
+                firstFaq.querySelector('.faq-answer').classList.add('active');
+                firstFaq.querySelector('.faq-icon').textContent = '−';
+            }
+        });
+    </script>
+</body>
+</html>
