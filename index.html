@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amy Lang - Heilung & Wandlung | Life-Coaching</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a52 50%, #0d2137 100%);
+            color: #e8f4f8;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: rgba(10, 22, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin-bottom: 60px;
+            border: 2px solid rgba(232, 244, 248, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #e8f4f8 0%, #ff1493 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #ff1493;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #a8d8ea;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff1493 0%, #c71585 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            border: 2px solid #ff1493;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        }
+
+        .section {
+            background: rgba(26, 58, 82, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(232, 244, 248, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            color: #ff1493;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            color: #d0e8f2;
+            line-height: 1.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            background: rgba(10, 22, 40, 0.6);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 20, 147, 0.2);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: #ff1493;
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.3);
+        }
+
+        .feature h3 {
+            color: #ff1493;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .feature p {
+            color: #b8dce8;
+            font-size: 1.1em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(199, 21, 133, 0.3));
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #ff1493;
+            margin: 40px 0;
+        }
+
+        .highlight strong {
+            color: #ff1493;
+            font-size: 1.3em;
+        }
+
+        .not-for {
+            background: rgba(255, 20, 147, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #ff1493;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .not-for h3 {
+            color: #ff1493;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .not-for p {
+            font-size: 1.2em;
+            color: #e8f4f8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            color: #a8d8ea;
+            font-size: 1em;
+        }
+
+        .quote {
+            font-size: 1.5em;
+            font-style: italic;
+            color: #ff1493;
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            border-top: 2px solid rgba(255, 20, 147, 0.3);
+            border-bottom: 2px solid rgba(255, 20, 147, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            .section {
+                padding: 40px 25px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AMY LANG</h1>
+            <p class="tagline">Heilung & Wandlung</p>
+            <p class="subtitle">Life-Coaching für Menschen, die bereit sind, sich wirklich zu verändern</p>
+            <a href="#kontakt" class="cta-button">Bist du bereit?</a>
+        </header>
+
+        <div class="section">
+            <h2>Für wen ist das?</h2>
+            <p>Du fühlst dich feststecken. Ausgelaugt. Ausgenutzt von Menschen, die nehmen, ohne zu geben.</p>
+            <p>Du weißt, dass du mehr bist - aber du weißt nicht, wie du es leben sollst.</p>
+            <p>Du willst dich nicht mehr auflösen. Du willst Substanz. Grenzen. Ein Leben, das dich nicht fertigmacht.</p>
+            
+            <div class="highlight">
+                <p><strong>Ich helfe Menschen, die bereit sind zu handeln.</strong></p>
+                <p>Nicht nur zu reden. Nicht nur zu jammern. Sondern sich wirklich zu verändern.</p>
+            </div>
+
+            <p>Ich bin Amy. Seit 20 Jahren begleite ich Menschen in ihrer Transformation - zunächst durch Sprache, jetzt direkt: durch Heilung.</p>
+            <p>Meine Schüler sagen: "Du veränderst nicht nur mein Deutsch. Du veränderst mein Leben."</p>
+            <p>Jetzt biete ich diese Transformation direkt an. Ohne Umwege.</p>
+        </div>
+
+        <div class="section">
+            <h2>Was passiert in unserer Arbeit?</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Grenzen setzen</h3>
+                    <p>Du lernst, wo du anfängst und andere aufhören. Du baust dein Haus - mit festen Wänden.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Parasiten erkennen</h3>
+                    <p>Du lernst, toxische Menschen zu erkennen - BEVOR sie dich aussaugen. Und wie du sie rauswirfst.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Substanz finden</h3>
+                    <p>Du fühlst dich nicht mehr "wie Wasser". Du wirst fest. Klar. Präsent in deinem eigenen Leben.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Wut transformieren</h3>
+                    <p>Deine Wut ist Kraft. Wir machen daraus keine Zerstörung, sondern Veränderung.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Leben zurückerobern</h3>
+                    <p>Du nimmst dir zurück, was andere dir genommen haben: Deine Zeit. Deine Energie. Dein Leben.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>Heilung statt Überleben</h3>
+                    <p>Du hörst auf zu überleben. Du fängst an zu leben.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="not-for">
+            <h3>Das ist NICHT für dich, wenn:</h3>
+            <p>❌ Du nur jammern willst, ohne zu handeln</p>
+            <p>❌ Du hoffst, dass ich dich "repariere" ohne deine Arbeit</p>
+            <p>❌ Du nicht bereit bist, unangenehme Wahrheiten zu hören</p>
+            <p>❌ Du Menschen magst, die dich ausnutzen</p>
+        </div>
+
+        <div class="section">
+            <h2>Wie wir arbeiten</h2>
+            <p><strong>Einzelsitzungen:</strong> 60 Minuten intensive Heilungsarbeit per Video. 80€</p>
+            <p><strong>Transformations-Paket:</strong> 6 Sitzungen über 3 Monate. Ein Fokus-Thema. Tiefe Veränderung. 450€</p>
+            
+            <div class="highlight">
+                <p><strong>Wichtig:</strong> Nicht jeder wird angenommen.</p>
+                <p>Du füllst ein Formular aus. Ich entscheide, ob wir zusammenpassen.</p>
+                <p>Ich arbeite nur mit Menschen, die WIRKLICH bereit sind.</p>
+            </div>
+        </div>
+
+        <div class="quote">
+            "Deine Zeit ist wertvoll. Deine Energie ist kostbar. Dein Leben gehört dir - nicht den Parasiten."
+        </div>
+
+        <div class="section" id="kontakt">
+            <h2>Bist du bereit?</h2>
+            <p>Dann schreib mir:</p>
+            <p><strong>Email:</strong> kontakt@amylang-coaching.com</p>
+            <p><strong>WhatsApp:</strong> +43 681 20283291</p>
+            
+            <div class="highlight">
+                <p><strong>Erste Schritte:</strong></p>
+                <p>1. Schreib mir eine Nachricht: "Ich bin bereit"</p>
+                <p>2. Beantworte 3 Fragen (ich schicke sie dir)</p>
+                <p>3. Ich melde mich innerhalb von 48 Stunden</p>
+                <p>4. Wir entscheiden gemeinsam, ob es passt</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 40px;">
+                <a href="mailto:kontakt@amylang-coaching.com" class="cta-button">Schreib mir jetzt</a>
+            </p>
+        </div>
+
+        <footer>
+            <p>Amy Lang - Heilung & Wandlung | Life-Coaching</p>
+            <p>© 2025 | Für Menschen, die wirklich bereit sind</p>
+        </footer>
+    </div>
+</body>
+</html>
